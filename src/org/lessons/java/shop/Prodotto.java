@@ -6,11 +6,11 @@ import java.util.Random;
 
 public class Prodotto {
 
-    public int codice;
-    public String nome;
-    public String descrizione;
-    public BigDecimal prezzo;
-    public BigDecimal IVA; // default IVA value
+    private int codice;
+    private String nome;
+    private String descrizione;
+    private BigDecimal prezzo;
+    private BigDecimal IVA; // default IVA value
 
     // constructor
     public Prodotto(String nome, String descrizione, BigDecimal prezzo, BigDecimal IVA) {
@@ -25,8 +25,51 @@ public class Prodotto {
         this.IVA = IVA;
     }
 
+    // constructor all zeros
+    public Prodotto() {
+        this.codice = 0;
+        this.nome = "";
+        this.descrizione = "";
+        this.prezzo = new BigDecimal("0.00");
+        this.IVA = new BigDecimal("0.22"); // default IVA of 22%
+    }
+
+    // getters
+    public int getCodice() {
+        return this.codice;
+    }
+
+    public String getNome() {
+        return this.nome;
+    }
+
+    public String getDescrizione() {
+        return this.descrizione;
+    }
+
     public BigDecimal getPrezzo() {
         return this.prezzo;
+    }
+
+    public BigDecimal getIVA() {
+        return this.IVA;
+    }
+
+    // setters
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public void setDescrizione(String descrizione) {
+        this.descrizione = descrizione;
+    }
+
+    public void setPrezzo(BigDecimal prezzo) {
+        this.prezzo = prezzo;
+    }
+
+    public void setIVA(BigDecimal IVA) {
+        this.IVA = IVA;
     }
 
     public BigDecimal getPrezzoConIVA() {
